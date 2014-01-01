@@ -1,0 +1,17 @@
+packages/
+tools/
+_Resharper.canopy
+*.ReSharper.user
+*.pdb
+*.exe
+chromedriver.log
+canopy/bin/**/*
+canopy/obj/**/*
+PoC/bin/**/*
+PoC/obj/**/*
+Winforms/bin/**/*
+winforms/obj/**/*
+nuget/*
+build/*
+tests/*
+*.suo
