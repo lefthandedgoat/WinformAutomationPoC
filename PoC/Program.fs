@@ -1,8 +1,16 @@
 ﻿open runner
-    
-context "poc"
-once (fun _ -> ()) //open app
-lastly (fun _ -> ()) //close app
+open guts
+open calculator
 
-"a test" &&& fun _ ->
-    ()
+context "PoC"
+once (fun _ -> start calculator.name calculator.path)
+
+"type a random number" &&& fun _ ->    
+    let random = System.Random().Next(100, 10000).ToString()    
+    enter random
+
+run ()
+
+System.Console.ReadKey() |> ignore
+
+quit ()
