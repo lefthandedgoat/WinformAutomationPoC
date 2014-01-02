@@ -61,6 +61,7 @@ let context c =
 
 let ( &&& ) description f = (last suites).Tests <- (last suites).Tests @ [Test(description, f, (last suites).Tests.Length + 1)]
 let ( &&! ) description f = (last suites).Tests <- (last suites).Tests @ [Test(description, skipped, (last suites).Tests.Length + 1)]
+//todo add back wip mode
 
 let mutable passedCount = 0
 let mutable failedCount = 0

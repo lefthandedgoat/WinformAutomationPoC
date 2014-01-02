@@ -7,20 +7,22 @@ let name = "Calculator"
 let path = "Calc.exe"
 
 //selectors of sorts?
-let results = "150"
+let results = "#150" //made up psuedo selector for Id
 
 //app specific helper functions
 let enter (number : string) = 
     number 
     |> List.ofSeq 
-    |> List.map (fun c -> click (string(c))) 
-    |> ignore
+    |> List.iter (fun c -> click (string(c))) 
 
 let clear _ = click "Clear"
 
-let add numbers = 
+let private enterThen numbers action =
     numbers
-    |> List.map (fun number -> 
+    |> List.iter (fun number -> 
                     enter (number.ToString())
-                    click "Add")
-    |> ignore
+                    click action)
+
+let add numbers = enterThen numbers "Add"
+    
+let multiply numbers = enterThen numbers "Multiply"
