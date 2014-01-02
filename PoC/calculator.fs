@@ -15,3 +15,12 @@ let enter (number : string) =
     |> List.ofSeq 
     |> List.map (fun c -> click (string(c))) 
     |> ignore
+
+let clear _ = click "Clear"
+
+let add numbers = 
+    numbers
+    |> List.map (fun number -> 
+                    enter (number.ToString())
+                    click "Add")
+    |> ignore
