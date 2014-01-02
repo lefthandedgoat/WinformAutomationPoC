@@ -10,4 +10,4 @@ guts.fs is the core bits
 
 calculator.fs is the file that has selectors/helper functions/metadata about the app under test
 
-Program.fs has the actual tests
+Program.fs has the actual tests, tests could be moved into calculator.fs too
